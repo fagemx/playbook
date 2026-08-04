@@ -52,22 +52,7 @@
   --hero-grad: linear-gradient(196.557deg, #e8e8e6 4.9%, #685cff 141.59%);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]):not([data-theme="dark"]) {
-    --ink-rgb: 232, 232, 230;
-    --bg: #08090a;
-    --surface-1: #0d0d0d;
-    --surface-2: #141414;
-    --code-bg: #0d0d0d;
-    --line: rgba(255, 255, 255, 0.10);
-    --line-strong: rgba(255, 255, 255, 0.18);
-    --accent: #4337ff;
-    --accent-text: #685cff;
-    --accent-soft: rgba(67, 55, 255, 0.16);
-    --highlight: #9de3f1;
-    --hero-grad: linear-gradient(196.557deg, #e8e8e6 4.9%, #685cff 141.59%);
-  }
-}
+/* 預設 light，不跟隨系統色；深色只在使用者手選 data-theme="dark" 時生效（操作者裁定 2026-08-05）。 */
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
