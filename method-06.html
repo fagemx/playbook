@@ -15,8 +15,8 @@
     <a class="top-level home" href="index.html"><span class="lbl scramble" data-text="INDEX">INDEX</span></a>
     <p class="book-head">第一本・交付方法</p>
     <a class="top-level" href="method-01.html" title="一、生圖變快之後，交件也要跟著變快"><span class="no">01</span><span class="lbl scramble" data-text="AFTER GENERATION">AFTER GENERATION</span></a>
-    <a class="top-level" href="method-02.html" title="二、契約：一份 manifest 同時是美術訂單與交付版型"><span class="no">02</span><span class="lbl scramble" data-text="ONE MANIFEST">ONE MANIFEST</span></a>
-    <a class="top-level" href="method-03.html" title="三、產線：換皮不動骨，而且是官方 runtime 判的"><span class="no">03</span><span class="lbl scramble" data-text="OUTSIDE JUDGE">OUTSIDE JUDGE</span></a>
+    <a class="top-level" href="method-02.html" title="二、契約：同一份清單檔，美術照它畫，遊戲照它收"><span class="no">02</span><span class="lbl scramble" data-text="ONE MANIFEST">ONE MANIFEST</span></a>
+    <a class="top-level" href="method-03.html" title="三、產線：換皮不動骨，而且是官方播放程式判的"><span class="no">03</span><span class="lbl scramble" data-text="OUTSIDE JUDGE">OUTSIDE JUDGE</span></a>
     <a class="top-level" href="method-04.html" title="四、人的位置：機器守結構，人守品味"><span class="no">04</span><span class="lbl scramble" data-text="WHERE PEOPLE STAND">WHERE PEOPLE STAND</span></a>
     <a class="top-level" href="method-05.html" title="五、治理：每一張圖都問得出它從哪裡來"><span class="no">05</span><span class="lbl scramble" data-text="ASK ANY FILE">ASK ANY FILE</span></a>
     <a class="top-level active" href="method-06.html" title="六、產線的產線：這套系統本身是被代理艦隊做出來的"><span class="no">06</span><span class="lbl scramble" data-text="THE LINE THAT BUILT IT">THE LINE THAT BUILT IT</span></a>
@@ -70,7 +70,7 @@
       <p>派工的形狀固定。先寫規格，講清楚要什麼、什麼算完成。規格轉成計畫，計畫拆成一個一個步驟，現在累積九百多個。每個步驟同一套動作：先寫測試、跑到紅、實作、跑到綠、提交。</p>
       <p>交付前面擋三層。第一層，驗收指令事前宣告：測試、型別檢查、建置、依賴有沒有被偷加，一條沒過就不算完成。第二層，停手規則：同一個地方修三輪還不過就停下來問人，不准繼續猜。第三層，最後那關不准代理自己簽：機器判得了就判，判不了就送到人面前。</p>
       <p>車也翻過。有一次自動閘門全綠，人一看，角色臉上兩張嘴。那次之後的修法不是提醒自己小心，是把限制寫成程式。</p>
-      <p>尺度：單一專案、單一操作者，數字出自本 repo 的提交與測試紀錄。</p>
+      <p>尺度：單一專案、單一操作者，數字出自本程式庫（repo）的提交與測試紀錄。</p>
 
       <figure class="dg">
         <div class="scroller">
@@ -131,7 +131,7 @@
       <p>閘門分三級。程式判得了的，代理自己跑自己判。可以重跑的自動證據，也歸機器。剩下那一級只有人能判，規格裡寫死：這是任何執行者都不准自己簽的那一關。</p>
       <p>實際擋下來過。有一輪的替身，最佳角度下輪廓吻合度 0.92。計畫凍結的門檻是 0.95。代理沒有把門檻改成 0.9，也沒有宣稱「幾乎過了」，它停下來寫請求。人核准了一個例外，理由寫明，另外存成一個檔案。門檻一個字沒動。</p>
 
-      <h4>跨 session 的記憶</h4>
+      <h4>跨對話（session）的記憶</h4>
       <p>代理的對話會結束，決定不能跟著結束。決策連理由記進一本帳，下一個 session 開始前先讀它。沒有這本帳，同一個問題會重新討論一次，答案可能相反。</p>
       <p>帳分兩層效力：代理自己記的是待批，人批准過的才有約束力。沒有這層區分，代理可以自己給自己立法。</p>
 
@@ -153,7 +153,7 @@
       <h3>收據</h3>
       <ol class="receipts">
         <li>
-          <p class="rk">代理守則九條（執行順序、測試循環、clean-room、授權保留、push 邊界）</p>
+          <p class="rk">代理守則九條（執行順序、測試循環、淨室（clean-room）、授權保留、推送（push）邊界）</p>
           <span class="rl">AGENTS.md</span>
         </li>
         <li>

@@ -15,8 +15,8 @@
     <a class="top-level home" href="index.html"><span class="lbl scramble" data-text="INDEX">INDEX</span></a>
     <p class="book-head">第一本・交付方法</p>
     <a class="top-level" href="method-01.html" title="一、生圖變快之後，交件也要跟著變快"><span class="no">01</span><span class="lbl scramble" data-text="AFTER GENERATION">AFTER GENERATION</span></a>
-    <a class="top-level" href="method-02.html" title="二、契約：一份 manifest 同時是美術訂單與交付版型"><span class="no">02</span><span class="lbl scramble" data-text="ONE MANIFEST">ONE MANIFEST</span></a>
-    <a class="top-level" href="method-03.html" title="三、產線：換皮不動骨，而且是官方 runtime 判的"><span class="no">03</span><span class="lbl scramble" data-text="OUTSIDE JUDGE">OUTSIDE JUDGE</span></a>
+    <a class="top-level" href="method-02.html" title="二、契約：同一份清單檔，美術照它畫，遊戲照它收"><span class="no">02</span><span class="lbl scramble" data-text="ONE MANIFEST">ONE MANIFEST</span></a>
+    <a class="top-level" href="method-03.html" title="三、產線：換皮不動骨，而且是官方播放程式判的"><span class="no">03</span><span class="lbl scramble" data-text="OUTSIDE JUDGE">OUTSIDE JUDGE</span></a>
     <a class="top-level" href="method-04.html" title="四、人的位置：機器守結構，人守品味"><span class="no">04</span><span class="lbl scramble" data-text="WHERE PEOPLE STAND">WHERE PEOPLE STAND</span></a>
     <a class="top-level" href="method-05.html" title="五、治理：每一張圖都問得出它從哪裡來"><span class="no">05</span><span class="lbl scramble" data-text="ASK ANY FILE">ASK ANY FILE</span></a>
     <a class="top-level" href="method-06.html" title="六、產線的產線：這套系統本身是被代理艦隊做出來的"><span class="no">06</span><span class="lbl scramble" data-text="THE LINE THAT BUILT IT">THE LINE THAT BUILT IT</span></a>
@@ -116,7 +116,7 @@
 
       <h4>第一層：插件現在有三顆，未來一顆</h4>
       <ul>
-        <li>積木插件，預設。參數化積木照角色類型組裝，在事前宣告的範圍內貼合原圖。貼合完，幾何用雜湊凍結。每件的身分、前後、關節都由組裝定下，不用事後驗。成本也低：渲染 2.5 秒，選相機 2.0 秒，GPU 記憶體峰值不到 2GB。</li>
+        <li>積木插件，預設。參數化積木照角色類型組裝，在事前宣告的範圍內貼合原圖。貼合完，幾何用雜湊凍結。每件的身分、前後、關節都由組裝定下，不用事後驗。成本也低：渲染 2.5 秒，選相機 2.0 秒，顯示卡（GPU）記憶體峰值不到 2GB。</li>
         <li>生成插件。影像轉 3D 那顆，第三章那次輸在時間之後降級：只補被擋住的和關節掀開的，看得見的面永遠不畫。這條寫死在架構總綱裡。</li>
         <li>人，現任。畫的人本人，永遠在場。這一顆同時是品質基準和成本基準：機器插件要接哪一件，先跟人比同一套驗收，再比每件主動修正的分鐘數，兩關都贏才換手。</li>
         <li>學來的插件，未來。帳本攢下來的紀錄，將來訓練出一顆。現在不存在，位置先留著。</li>
@@ -134,18 +134,18 @@
         <li>可見性：這件哪些像素原圖看得到，哪些被擋住。</li>
         <li>未知區：原圖和假設都到不了，只能靠生成。擦邊角度算未知，不算可見；動作的未知區要整段掃過再取聯集，不是抽幾個角度看看。</li>
       </ul>
-      <p>可見區內，原圖像素永遠優先。生成只准進未知區，分開打分。GLB、積木場景、人畫的分層檔都可以當載體：介面是這四張證據，不是檔案格式。</p>
+      <p>可見區內，原圖像素永遠優先。生成只准進未知區，分開打分。3D 模型檔（GLB）、積木場景、人畫的分層檔都可以當載體：介面是這四張證據，不是檔案格式。</p>
 
       <h4>第四層：判決分三層</h4>
       <ul>
-        <li>結構閘，程式判：輪廓與各件重合率、地標誤差、前後一致、可見像素逐位元相同、同輸入重跑結果相同；產物再送進官方 Spine runtime，逐骨檢查 NaN 與 world transform。</li>
+        <li>結構閘，程式判：輪廓與各件重合率、地標誤差、前後一致、可見像素逐位元相同、同輸入重跑結果相同；產物再送進 Spine 官方播放程式（runtime），逐骨檢查算不出數字的爛值（NaN）與骨頭在畫面上的最終位置（world transform）。</li>
         <li>參照閘：各件輪廓對原圖、跨件風格連續、尺寸契約按名目查。違規報出名字，不報一團模糊。</li>
         <li>人閘：只審新像素。否決要圈座標，圈會落帳，變成下一輪的定位約束。沒有座標的否決只換得一次診斷，換不到整批重做。</li>
       </ul>
-      <p>情境考卷把隱含期待寫成可執行斷言：關節掰到宣告極限，透空要是 0，接縫至多 1 像素。斷言凍結，之後每次改動都重考同一份。</p>
+      <p>情境驗收把隱含期待寫成可執行斷言：關節掰到宣告極限，透空要是 0，接縫至多 1 像素。斷言凍結，之後每次改動都重考同一份。</p>
 
       <h4>時間也上閘（試點中）</h4>
-      <p>靜態每一格都對，連起來還是可能跳一下。規則已經寫進循環設計。換圖那一幀、前後翻面那一幀、動作頂點那一幀，對著機器鋪好的 timeline 腳本逐幀斷言。播出來的每一幀再掃一遍：連通塊突然變多當脫落抓，高頻能量當抖動抓。幀差能量沿整條時間軸算，對照參考影片量出來的節奏契約。人只判觀感與節奏。這節標試點中：規則已裁定，掃描工具排在切件循環裡，數字還沒跑出來。</p>
+      <p>靜態每一格都對，連起來還是可能跳一下。規則已經寫進循環設計。換圖那一幀、前後翻面那一幀、動作頂點那一幀，對著機器鋪好的時間軸（timeline）腳本逐幀斷言。播出來的每一幀再掃一遍：連通塊突然變多當脫落抓，高頻能量當抖動抓。幀差能量沿整條時間軸算，對照參考影片量出來的節奏契約。人只判觀感與節奏。這節標試點中：規則已裁定，掃描工具排在切件循環裡，數字還沒跑出來。</p>
 
       <h4>換代那天，實際發生什麼</h4>
       <p>換插件三步：接上第一層，同一套證據重跑，同一組門檻重比。母圖那一站真的換過一次。生成插件降級後，母圖改由積木擺好姿勢當條件，讓模型照著重繪。那一輪用了哪個模型哪個版本、提示詞全文、輸入雜湊、比對數字，整份記在晉升紀錄裡，核可後雜湊凍結。件的名字沒變，證據格式沒變，門檻沒變。</p>
@@ -154,7 +154,7 @@
       <p>三條，事前寫死。生成補丁裝不回積木框架，按件選擇塌回按線選擇，機器就輸掉對路線的主要優勢。真實資產上未知區佔了大頭，機器退化成掛著閘門的生成管線。人的否決跟前兩層閘完全對不上號，帳本學不到品味，機器永遠只是代償。哪一條成立，架構就該改。到今天全部實測都在單一測試角色加一隻吉祥物上，數字不外推。</p>
 
       <h4>輪到你了</h4>
-      <p>這章你是接的人。你收到一包：atlas、skeleton.json、skins，附一行測試指令。跑，綠了，掛進遊戲。相容性交付前已經考過：官方 runtime 載入，逐骨查 NaN 與 world transform。你要決定的只有掛載位置、效能預算，還有跟遊戲那邊怎麼接。上游哪一件人畫、哪一件模型補、插件換過幾輪，你不需要知道；換代發生時，你收到的還是同一包格式、同一行指令。</p>
+      <p>這章你是接的人。你收到一包：合圖檔（atlas）、骨架檔（skeleton.json）、皮（skins），附一行測試指令。跑，綠了，掛進遊戲。相容性交付前已經考過：官方 runtime 載入，逐骨查 NaN 與 world transform。你要決定的只有掛載位置、效能預算，還有跟遊戲那邊怎麼接。上游哪一件人畫、哪一件模型補、插件換過幾輪，你不需要知道；換代發生時，你收到的還是同一包格式、同一行指令。</p>
     </div>
 
     <div id="b-receipts" class="blk">
@@ -165,7 +165,7 @@
           <span class="rl">docs/superpowers/specs/2026-07-30-3d-spine-agent-northstar.md</span>
         </li>
         <li>
-          <p class="rk">生成插件挑戰與降級的全數字（A/B 4.36 倍、採用步驟秒數）</p>
+          <p class="rk">生成插件挑戰與降級的全數字（兩路對比 A/B 4.36 倍、採用步驟秒數）</p>
           <span class="rl">docs/superpowers/specs/2026-07-30-character-3d-to-2d-pilot-result.md</span>
         </li>
         <li>
@@ -202,7 +202,7 @@
     <div id="b-fall" class="blk">
       <h3>失敗現場</h3>
       <div class="fall">
-        <p>母圖試探有一輪從頭錯到尾：兩次生成都拿被否決的舊積木當來源。操作者抓到，整輪標 invalid 封存，目錄裡放一張「不得使用」。</p>
+        <p>母圖試探有一輪從頭錯到尾：兩次生成都拿被否決的舊積木當來源。操作者抓到，整輪標作廢（invalid）封存，目錄裡放一張「不得使用」。</p>
         <p class="rule">沉澱出來的規則：來源先驗雜湊再開跑；作廢輪次不刪，連原因一起留在帳上。</p>
       </div>
     </div>

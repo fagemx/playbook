@@ -15,8 +15,8 @@
     <a class="top-level home" href="index.html"><span class="lbl scramble" data-text="INDEX">INDEX</span></a>
     <p class="book-head">第一本・交付方法</p>
     <a class="top-level" href="method-01.html" title="一、生圖變快之後，交件也要跟著變快"><span class="no">01</span><span class="lbl scramble" data-text="AFTER GENERATION">AFTER GENERATION</span></a>
-    <a class="top-level" href="method-02.html" title="二、契約：一份 manifest 同時是美術訂單與交付版型"><span class="no">02</span><span class="lbl scramble" data-text="ONE MANIFEST">ONE MANIFEST</span></a>
-    <a class="top-level" href="method-03.html" title="三、產線：換皮不動骨，而且是官方 runtime 判的"><span class="no">03</span><span class="lbl scramble" data-text="OUTSIDE JUDGE">OUTSIDE JUDGE</span></a>
+    <a class="top-level" href="method-02.html" title="二、契約：同一份清單檔，美術照它畫，遊戲照它收"><span class="no">02</span><span class="lbl scramble" data-text="ONE MANIFEST">ONE MANIFEST</span></a>
+    <a class="top-level" href="method-03.html" title="三、產線：換皮不動骨，而且是官方播放程式判的"><span class="no">03</span><span class="lbl scramble" data-text="OUTSIDE JUDGE">OUTSIDE JUDGE</span></a>
     <a class="top-level" href="method-04.html" title="四、人的位置：機器守結構，人守品味"><span class="no">04</span><span class="lbl scramble" data-text="WHERE PEOPLE STAND">WHERE PEOPLE STAND</span></a>
     <a class="top-level" href="method-05.html" title="五、治理：每一張圖都問得出它從哪裡來"><span class="no">05</span><span class="lbl scramble" data-text="ASK ANY FILE">ASK ANY FILE</span></a>
     <a class="top-level" href="method-06.html" title="六、產線的產線：這套系統本身是被代理艦隊做出來的"><span class="no">06</span><span class="lbl scramble" data-text="THE LINE THAT BUILT IT">THE LINE THAT BUILT IT</span></a>
@@ -55,7 +55,7 @@
 
     <div id="b-ask" class="blk ask">
       <h3>疑惑</h3>
-      <p>AI 整張角色圖都畫得出來，臉、盔甲、光影都對。為什麼拆成 Spine 分層還是不行？</p>
+      <p>AI 整張角色圖都畫得出來，臉、盔甲、光影都對。為什麼拆成骨架動畫（Spine）分層還是不行？</p>
     </div>
 
     <div id="b-say" class="blk say">
@@ -112,7 +112,7 @@
       <p>整張圖是一個平面，錯了也只是「有點怪」。分層是一組零件，每一件都要各自成立：完整、定位、前後、可動，四個要求缺一個，動起來就穿幫。四個要求對應四道關，難度差很遠，混在一起談，結論不是「AI 就是不行」就是「AI 馬上就行」，兩個都錯。分開驗，才知道錢和力氣該花在哪一關。</p>
 
       <h4>第一關：認件，已經不難</h4>
-      <p>「哪些像素屬於哪件」，可指示的分割模型處理得掉。實測收據：一隻測試角色十二件一件不缺，遮罩聯集蓋滿前景（IoU 1.0，IoU 是兩塊形狀的重合率）、出界 0.0。不過「不難」不等於「不用人」：那套遮罩磨了十三次才定稿，人還是要跟在後面修語意，只是這關修得完，也修得快。</p>
+      <p>「哪些像素屬於哪件」，可指示的分割模型處理得掉。實測收據：一隻測試角色十二件一件不缺，遮罩聯集蓋滿前景，重疊率（IoU）1.0、出界 0.0。不過「不難」不等於「不用人」：那套遮罩磨了十三次才定稿，人還是要跟在後面修語意，只是這關修得完，也修得快。</p>
 
       <h4>第二關：被擋住的結構</h4>
       <p>畫的人拆件時做了一件事，自己不會特別意識到：把被手擋住的袖子直接畫完，因為他知道袖子長什麼樣。這個「知道」是多年練出來的，腦裡有那隻角色的立體形，投影回紙上。模型沒有這個留存的 3D 狀態，每次生成都是重新猜一張整圖，局部都像，彼此對不齊；檢查的代理只拿得到一張平面圖，也驗不了它看不到的東西。收據：零件獨立重生二十九張，角度、材質、形狀各飄各的，整批被打回。這關要的不是更會畫的模型，是一個明確的 3D 表示，讓「後面是什麼」變成查得到的東西。</p>
@@ -127,7 +127,7 @@
       <p>四道關裡，一、三是工程，二是研究，四是需求管理。做法是把一到三關全部變成可以量的結構（範圍、深度、可見性、未知區，每件四張證據），人從「動手拆」退到「看證據、下否決」。這台機器長什麼樣、為什麼模型換代它不用重做，下一章講。</p>
 
       <h4>輪到你了</h4>
-      <p>這章你是畫的人。回想上一次拆件：Photoshop 開著，套索圈到被擋住的袖口，你沒停下來查資料，直接把看不見的那段畫完，因為你知道它長什麼樣。這條研究線要做的，就是把你這個「知道」變成機器查得到的結構。你手上的工作不變。對位、量重疊、驗破洞，這幾樣你本來就懶得做，現在歸機器管。</p>
+      <p>這章你是畫的人。回想上一次拆件：修圖軟體（Photoshop）開著，套索圈到被擋住的袖口，你沒停下來查資料，直接把看不見的那段畫完，因為你知道它長什麼樣。這條研究線要做的，就是把你這個「知道」變成機器查得到的結構。你手上的工作不變。對位、量重疊、驗破洞，這幾樣你本來就懶得做，現在歸機器管。</p>
     </div>
 
     <div id="b-receipts" class="blk">

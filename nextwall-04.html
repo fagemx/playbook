@@ -15,8 +15,8 @@
     <a class="top-level home" href="index.html"><span class="lbl scramble" data-text="INDEX">INDEX</span></a>
     <p class="book-head">第一本・交付方法</p>
     <a class="top-level" href="method-01.html" title="一、生圖變快之後，交件也要跟著變快"><span class="no">01</span><span class="lbl scramble" data-text="AFTER GENERATION">AFTER GENERATION</span></a>
-    <a class="top-level" href="method-02.html" title="二、契約：一份 manifest 同時是美術訂單與交付版型"><span class="no">02</span><span class="lbl scramble" data-text="ONE MANIFEST">ONE MANIFEST</span></a>
-    <a class="top-level" href="method-03.html" title="三、產線：換皮不動骨，而且是官方 runtime 判的"><span class="no">03</span><span class="lbl scramble" data-text="OUTSIDE JUDGE">OUTSIDE JUDGE</span></a>
+    <a class="top-level" href="method-02.html" title="二、契約：同一份清單檔，美術照它畫，遊戲照它收"><span class="no">02</span><span class="lbl scramble" data-text="ONE MANIFEST">ONE MANIFEST</span></a>
+    <a class="top-level" href="method-03.html" title="三、產線：換皮不動骨，而且是官方播放程式判的"><span class="no">03</span><span class="lbl scramble" data-text="OUTSIDE JUDGE">OUTSIDE JUDGE</span></a>
     <a class="top-level" href="method-04.html" title="四、人的位置：機器守結構，人守品味"><span class="no">04</span><span class="lbl scramble" data-text="WHERE PEOPLE STAND">WHERE PEOPLE STAND</span></a>
     <a class="top-level" href="method-05.html" title="五、治理：每一張圖都問得出它從哪裡來"><span class="no">05</span><span class="lbl scramble" data-text="ASK ANY FILE">ASK ANY FILE</span></a>
     <a class="top-level" href="method-06.html" title="六、產線的產線：這套系統本身是被代理艦隊做出來的"><span class="no">06</span><span class="lbl scramble" data-text="THE LINE THAT BUILT IT">THE LINE THAT BUILT IT</span></a>
@@ -115,18 +115,18 @@
       <p>母圖是已經核可的定裝圖；凍結是把檔案雜湊鎖死，之後任何流程不准改寫它。所有件的可見像素只准從這張圖搬，搬是複製位元，不是重畫一張像的。</p>
 
       <h4>共邊遮罩：兩件的交界只畫一條線</h4>
-      <p>有哪些件不是畫圖的人臨場決定，是從骨架槽位清單繼承下來，二十個槽。件跟件的交界只畫一條線，兩邊的遮罩都從同一條曲線生出來，縫隙和重疊在這種畫法裡畫不出來，不用靠檢查抓。這個做法從 CAD 的草圖約束搬來：先讓錯誤畫不出來，比事後檢查便宜。要人看的只剩外輪廓和沒共邊的邊界，在分件板上審。</p>
+      <p>有哪些件不是畫圖的人臨場決定，是從骨架槽位清單繼承下來，二十個槽。件跟件的交界只畫一條線，兩邊的遮罩都從同一條曲線生出來，縫隙和重疊在這種畫法裡畫不出來，不用靠檢查抓。這個做法從工程製圖軟體（CAD）的草圖約束搬來：先讓錯誤畫不出來，比事後檢查便宜。要人看的只剩外輪廓和沒共邊的邊界，在分件板上審。</p>
 
       <h4>拼回驗收</h4>
-      <p>切完的件全部疊回去，跟母圖逐位元比對。這條現在是這條線自己的自動測試：切出二十件，疊回去跟母圖四個通道逐像素比，差異像素零。透明的地方也比。alpha 是零的像素，底下的顏色一樣要原封不動，不然「逐位元」就變成「看起來一樣」。這關過了，「源姿勢像不像本人」就不用人判：它就是母圖本人，人只看新像素。</p>
+      <p>切完的件全部疊回去，跟母圖逐位元比對。這條現在是這條線自己的自動測試：切出二十件，疊回去跟母圖四個通道逐像素比，差異像素零。透明的地方也比。透明度（alpha）是零的像素，底下的顏色一樣要原封不動，不然「逐位元」就變成「看起來一樣」。這關過了，「源姿勢像不像本人」就不用人判：它就是母圖本人，人只看新像素。</p>
 
       <h4>被擋住的地方怎麼補</h4>
       <p>補的單位是一整塊面，不是一小塊補丁：整顆頭殼、手臂後面的整片軀幹、四肢的根部。一次生成一整塊，比十次小補丁更不容易在接縫穿幫。範圍由篩選遮罩鎖死，已知像素不准碰。</p>
       <p>要補多大一塊，是算出來的。掃的做法不是每隔幾度拍一張看看，是把輪廓上每個像素沿它的圓弧軌跡，跟格線的交點解出來，一格一格塗滿；宣告過的動作掃完取聯集，就是要補的範圍。這樣算出來跟取樣密度無關：一度掃跟半度掃，出來的像素一個不差，這條有測試釘著。三塊面實際算出來：頭殼 6962 像素，手臂後面那片軀幹 63 像素，四肢根部 111 像素。閘門實測：露出零、接縫零、已知像素零改動。</p>
-      <p>不想用生成的槽位，同一份輪廓稿也可以開單給美術畫，兩條路都要過同一套驗收。</p>
+      <p>不想用生成的槽位，同一份輪廓稿也可以交給美術畫，兩條路都要過同一套驗收。</p>
 
       <h4>人審什麼</h4>
-      <p>拼回逐位元相同是切法保證的，所以「像不像原圖」不進人的工作清單。人審的只有新像素：被擋區補出來的面、動作掀開才看得到的區域。審查有兩條規矩。第一批只交最小可判的東西：idle 迴圈加一個修好的 win 姿勢，不是十五格全家福。打回要圈座標：圈在哪一件哪一塊，那個圈會變成機器下一輪的定位約束，不是一句「重來」。</p>
+      <p>拼回逐位元相同是切法保證的，所以「像不像原圖」不進人的工作清單。人審的只有新像素：被擋區補出來的面、動作掀開才看得到的區域。審查有兩條規矩。第一批只交最小可判的東西：待機（idle）迴圈加一個修好的中獎（win）姿勢，不是十五格全家福。打回要圈座標：圈在哪一件哪一塊，那個圈會變成機器下一輪的定位約束，不是一句「重來」。</p>
 
       <h4>母圖自己怎麼來</h4>
       <p>切件這條線吃的是母圖，那母圖從哪來？先講試過但沒成的那條。做法是把角色的 3D 積木擺好姿勢當條件，讓模型照著重繪成母圖候選，幾何鎖不鎖得住用輪廓重合率量，及格線事前寫死 0.86。立了九次案，四十一次嘗試，前八次全部沒有存活者。最好的一次 0.9270，比目標 0.90 還高，照樣不算過：尺寸契約那幾條下限沒全過。事前登記的門檻就是門檻，不因為某一項漂亮就放行。</p>
@@ -134,7 +134,7 @@
 
       <h4>還沒過的</h4>
       <p>三件，照實列。</p>
-      <p>第一，切出來這包還是候選，還沒晉升成台上那包。晉升是另外一個決定，人還沒下。</p>
+      <p>第一，切出來這包還是候選，還沒晉升成正式在用的那包。晉升是另外一個決定，人還沒下。</p>
       <p>第二，動作節奏的契約還在等核定。從參考量測算出來的那份草案已經交出去了，核定之前，時間軸那關不開。</p>
       <p>第三，時間軸考試本身還沒跑。第二章講的那些逐幀斷言，規則寫好了，工具排在那份契約後面。</p>
       <p>尺度：單一角色的實測，加另一隻角色的翻車紀錄；數字不外推。</p>

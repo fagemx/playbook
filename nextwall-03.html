@@ -15,8 +15,8 @@
     <a class="top-level home" href="index.html"><span class="lbl scramble" data-text="INDEX">INDEX</span></a>
     <p class="book-head">第一本・交付方法</p>
     <a class="top-level" href="method-01.html" title="一、生圖變快之後，交件也要跟著變快"><span class="no">01</span><span class="lbl scramble" data-text="AFTER GENERATION">AFTER GENERATION</span></a>
-    <a class="top-level" href="method-02.html" title="二、契約：一份 manifest 同時是美術訂單與交付版型"><span class="no">02</span><span class="lbl scramble" data-text="ONE MANIFEST">ONE MANIFEST</span></a>
-    <a class="top-level" href="method-03.html" title="三、產線：換皮不動骨，而且是官方 runtime 判的"><span class="no">03</span><span class="lbl scramble" data-text="OUTSIDE JUDGE">OUTSIDE JUDGE</span></a>
+    <a class="top-level" href="method-02.html" title="二、契約：同一份清單檔，美術照它畫，遊戲照它收"><span class="no">02</span><span class="lbl scramble" data-text="ONE MANIFEST">ONE MANIFEST</span></a>
+    <a class="top-level" href="method-03.html" title="三、產線：換皮不動骨，而且是官方播放程式判的"><span class="no">03</span><span class="lbl scramble" data-text="OUTSIDE JUDGE">OUTSIDE JUDGE</span></a>
     <a class="top-level" href="method-04.html" title="四、人的位置：機器守結構，人守品味"><span class="no">04</span><span class="lbl scramble" data-text="WHERE PEOPLE STAND">WHERE PEOPLE STAND</span></a>
     <a class="top-level" href="method-05.html" title="五、治理：每一張圖都問得出它從哪裡來"><span class="no">05</span><span class="lbl scramble" data-text="ASK ANY FILE">ASK ANY FILE</span></a>
     <a class="top-level" href="method-06.html" title="六、產線的產線：這套系統本身是被代理艦隊做出來的"><span class="no">06</span><span class="lbl scramble" data-text="THE LINE THAT BUILT IT">THE LINE THAT BUILT IT</span></a>
@@ -55,7 +55,7 @@
 
     <div id="b-ask" class="blk ask">
       <h3>疑惑</h3>
-      <p>拆件最麻煩的就兩樣：每一件放在哪裡，還有哪裡被擋住。現在 image-to-3D 這麼熱，先把角色轉成 3D，這兩樣機器不就都知道了？</p>
+      <p>拆件最麻煩的就兩樣：每一件放在哪裡，還有哪裡被擋住。現在影像轉 3D（image-to-3D）這麼熱，先把角色轉成 3D，這兩樣機器不就都知道了？</p>
     </div>
 
     <div id="b-say" class="blk say">
@@ -118,19 +118,19 @@
       <p>2D 拆件有兩個天生的難點。位置：每一件切下來，要放回正確的座標，關節處誰壓誰要對。遮擋：被手擋住的軀幹、被頭擋住的肩膀，切下來是破的，要補完整。畫的人腦裡有 3D，轉個念就補得出來；模型沒有。3D 重建看起來能一次解決兩樣：幾何有了，位置和遮擋都算得出來。這個想法值得花一次錢認真驗。</p>
 
       <h4>兩條路怎麼試</h4>
-      <p>同一隻角色、同一套驗收、兩條路，簽名報告裡叫 Route A、Route B。直接拆（Route A）：開源分割模型圈出十二件的範圍，像素取自原圖，人修遮罩和邊。繞 3D（Route B）：先重建替身，生成出來一直不像本人，最後用一顆操作者授權的外部 3D 模型，簽了例外。接著選相機、對位，把零件輪廓投影回原圖照著拆。執行環境全部釘死：主機、GPU 服務、三個模型的版本與雜湊，都在簽名報告裡。</p>
+      <p>同一隻角色、同一套驗收、兩條路，簽名報告裡叫 Route A、Route B。直接拆（Route A）：開源分割模型圈出十二件的範圍，像素取自原圖，人修遮罩和邊。繞 3D（Route B）：先重建替身，生成出來一直不像本人，最後用一顆操作者授權的外部 3D 模型，簽了例外。接著選相機、對位，把零件輪廓投影回原圖照著拆。執行環境全部釘死：主機、顯示卡（GPU）服務、三個模型的版本與雜湊，都在簽名報告裡。</p>
 
       <h4>品質那關，兩條路都過</h4>
       <ul>
-        <li>十二件一件不缺。遮罩聯集蓋滿前景，IoU 1.0（IoU 是兩塊形狀的重合率），出界 0.0。</li>
-        <li>拼回原姿勢：看得見的像素 RGB 誤差 0.0，逐位元相同；最大接縫 0 像素。</li>
+        <li>十二件一件不缺。遮罩聯集蓋滿前景，重疊率（IoU）1.0，出界 0.0。</li>
+        <li>拼回原姿勢：看得見的像素顏色值（RGB）誤差 0.0，逐位元相同；最大接縫 0 像素。</li>
         <li>六個關節各掰到正負極限、共十八格：透空 0 像素、接縫 0 像素。</li>
         <li>操作者目檢：分件、頭冠、手、臉、關節、像不像本人，全過。</li>
       </ul>
       <p>繞 3D 那條路，原始指標沒有全及格：替身輪廓 IoU 0.68、對位後輪廓 0.92、地標平均誤差 9.56 像素、各件投影 0.51 到 0.80。這幾項靠操作者簽例外放行，原始數字照登。例外的條件後來寫成規矩：看得見的像素以原圖為準，3D 只補被擋住的和關節掀開的，各件不准自己獨立變形。</p>
 
       <h4>時間那關，差了 4.36 倍</h4>
-      <p>比的是「主動修正時間」：人真正動手修的秒數，機器跑的不算。直接拆 2331.8 秒，約三十九分鐘；繞 3D 10176.7 秒，約兩小時五十分鐘。及格線事前就寫死：繞 3D 要省至少 30%。實際多花 336%。整張驗收表唯一一個 Fail 就是這格。</p>
+      <p>比的是「主動修正時間」：人真正動手修的秒數，機器跑的不算。直接拆 2331.8 秒，約三十九分鐘；繞 3D 10176.7 秒，約兩小時五十分鐘。及格線事前就寫死：繞 3D 要省至少 30%。實際多花 336%。整張驗收表唯一一個不及格（Fail）就是這格。</p>
       <p>時間帳沒有細目，對位的數字看得出時間花在哪：平均差 9.56 像素，最差的件投影重合只有 0.51。每一件都差一點，件件都要人拉回去。人拉的時間，把 3D 省下來的全部吃回去，還倒貼。</p>
 
       <h4>錢花在哪</h4>
@@ -143,7 +143,7 @@
       <p>翻案條件事前就寫死兩條：相機對位自動達標，不再靠人簽例外；被擋住的地方靠生成補起來，人只要少量修。帳本上的編號是 G06、G07。這兩個缺口補起來，同一套驗收重比一次就知道。</p>
 
       <h4>輪到你了</h4>
-      <p>這章你是裁的人。你收到一塊證據板：拼回對照圖、各件獨立圖、十八格關節壓力圖，每一關的數字排在旁邊。工具就是圖片檢視器，加 git 上那份簽名報告。要下的決定一句話：過、不過、或簽例外。你簽的例外會連原始數字寫進報告，三個月後翻得出來。品質那幾格可以簽例外。時間那關是事前寫死的硬門檻，沒得簽。</p>
+      <p>這章你是裁的人。你收到一塊證據板：拼回對照圖、各件獨立圖、十八格關節壓力圖，每一關的數字排在旁邊。工具就是圖片檢視器，加版本控制系統（git）上那份簽名報告。要下的決定一句話：過、不過、或簽例外。你簽的例外會連原始數字寫進報告，三個月後翻得出來。品質那幾格可以簽例外。時間那關是事前寫死的硬門檻，沒得簽。</p>
     </div>
 
     <div id="b-receipts" class="blk">

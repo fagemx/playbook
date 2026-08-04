@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>三、產線：換皮不動骨，而且是官方 runtime 判的｜交付方法</title>
+<title>三、產線：換皮不動骨，而且是官方播放程式判的｜交付方法</title>
 <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
@@ -15,8 +15,8 @@
     <a class="top-level home" href="index.html"><span class="lbl scramble" data-text="INDEX">INDEX</span></a>
     <p class="book-head">第一本・交付方法</p>
     <a class="top-level" href="method-01.html" title="一、生圖變快之後，交件也要跟著變快"><span class="no">01</span><span class="lbl scramble" data-text="AFTER GENERATION">AFTER GENERATION</span></a>
-    <a class="top-level" href="method-02.html" title="二、契約：一份 manifest 同時是美術訂單與交付版型"><span class="no">02</span><span class="lbl scramble" data-text="ONE MANIFEST">ONE MANIFEST</span></a>
-    <a class="top-level active" href="method-03.html" title="三、產線：換皮不動骨，而且是官方 runtime 判的"><span class="no">03</span><span class="lbl scramble" data-text="OUTSIDE JUDGE">OUTSIDE JUDGE</span></a>
+    <a class="top-level" href="method-02.html" title="二、契約：同一份清單檔，美術照它畫，遊戲照它收"><span class="no">02</span><span class="lbl scramble" data-text="ONE MANIFEST">ONE MANIFEST</span></a>
+    <a class="top-level active" href="method-03.html" title="三、產線：換皮不動骨，而且是官方播放程式判的"><span class="no">03</span><span class="lbl scramble" data-text="OUTSIDE JUDGE">OUTSIDE JUDGE</span></a>
     <div class="subs">
       <a class="sub" href="#b-ask"><span class="lbl">疑惑</span></a>
       <a class="sub" href="#b-say"><span class="lbl">主張</span></a>
@@ -48,9 +48,9 @@
     <div class="band">
       <div class="ghost" aria-hidden="true">03</div>
       <div class="kicker">Chapter 03</div>
-      <h2>三、產線：換皮不動骨，而且是官方 runtime 判的</h2>
+      <h2>三、產線：換皮不動骨，而且是官方播放程式判的</h2>
       <p class="entitle">Outside Judge</p>
-      <p class="standfirst">不靠我們說：產線只寫 skins 那一塊，骨頭跟動畫碰不到；產出再丟給官方 Spine runtime 載入，逐骨檢查，說了算的是 runtime。</p>
+      <p class="standfirst">不靠我們說：產線只寫皮（skins）那一塊，骨頭跟動畫碰不到；產出再丟給官方 Spine 播放程式（runtime）載入，逐骨檢查，說了算的是 runtime。</p>
     </div>
 
     <div id="b-ask" class="blk ask">
@@ -60,17 +60,17 @@
 
     <div id="b-say" class="blk say">
       <h3>主張</h3>
-      <p>不靠我們說：產線只寫 skins 那一塊，骨頭跟動畫碰不到；產出再丟給官方 Spine runtime 載入，逐骨檢查，說了算的是 runtime。</p>
+      <p>不靠我們說：產線只寫皮（skins）那一塊，骨頭跟動畫碰不到；產出再丟給官方 Spine 播放程式（runtime）載入，逐骨檢查，說了算的是 runtime。</p>
     </div>
 
     <div id="b-brief" class="blk">
       <h3>三分鐘版</h3>
       <p>換皮最怕動到骨架。一動到，動畫全部重測。所以每換一次皮，都有人要回答同一個問題：骨架動了沒？</p>
-      <p>講「沒動」很容易。判「沒動」才難。難在做的人自己出證明：自家 writer 寫出來，自家預覽器打得開，自家 QA 判綠，這串裡沒有一個外人。</p>
-      <p>兩層做法。第一層，讓它動不到：組包的時候，程式把骨架檔整份複製過去，只改寫 skins 那一塊，bones、slots、動畫整段原封帶著走。不是「小心不要動」，是程式路徑上碰不到。第二層，找外面的考官：產出直接丟給官方 Spine runtime 載入，逐骨檢查。</p>
-      <p>考卷的數字：11 根骨全查，不抽樣，NaN 0 根；動起來 10 根，剩那根是 root，本來就不該動；10 個附件全接上；20 個測試全過。</p>
+      <p>講「沒動」很容易。判「沒動」才難。難在做的人自己出證明：自家寫檔程式（writer）寫出來，自家預覽器打得開，自家品質檢查（QA）判綠，這串裡沒有一個外人。</p>
+      <p>兩層做法。第一層，讓它動不到：組包的時候，程式把骨架檔整份複製過去，只改寫 skins 那一塊，骨頭（bones）、插槽（slots）、動畫整段原封帶著走。不是「小心不要動」，是程式路徑上碰不到。第二層，找外面的驗收程式：產出直接丟給官方 Spine runtime 載入，逐骨檢查。</p>
+      <p>這套驗收的數字：11 根骨全查，不抽樣，算不出數字的爛值（NaN）0 根；動起來 10 根，剩那根是 root，本來就不該動；10 個附件全接上；20 個測試全過。</p>
       <p>換圖頁那一關最省事。測試餵新圖頁的時候，那個資料夾裡根本沒放骨架檔。不給它，就沒得換。</p>
-      <p>兩個主題各跑完整條線，比對出來：bones、slots、animations 三個區塊逐位元相同，skins 不同。尺度講清楚：比的是這三個區塊，不是整個檔案（skin 名字不一樣，整檔本來就不同）；這條用人工腳本跑，還沒排進自動測試。</p>
+      <p>兩個主題各跑完整條線，比對出來：bones、slots、動畫（animations）三個區塊逐位元相同，skins 不同。尺度講清楚：比的是這三個區塊，不是整個檔案（skin 名字不一樣，整檔本來就不同）；這條用人工腳本跑，還沒排進自動測試。</p>
 
       <figure class="dg">
         <div class="scroller">
@@ -115,41 +115,41 @@
       <h3>推導</h3>
 
       <h4>自己判自己，對外沒有效力</h4>
-      <p>自家 writer 寫、自家 player 讀、自家 QA 判綠，等於球員兼裁判。「球員兼裁判」是契約裡的原文，不是事後感想。同一份契約還規定：官方 runtime 沒載入成功之前，對外文案只准寫「Spine 風格骨架子集」，不准寫「Spine 相容」。名字先降級，等考卷過了再改回來。</p>
+      <p>自家 writer 寫、自家播放器（player）讀、自家 QA 判綠，等於球員兼裁判。「球員兼裁判」是契約裡的原文，不是事後感想。同一份契約還規定：官方 runtime 沒載入成功之前，對外文案只准寫「Spine 風格骨架子集」，不准寫「Spine 相容」。名字先降級，等這套驗收過了再改回來。</p>
 
       <h4>第一層：讓它動不到</h4>
       <p>組包那一步只做一件事：把骨架正本整份複製，換掉 skins 那一塊，寫出該主題的骨架檔。bones、slots、animations 沒有任何程式路徑碰得到：複製之後只有 skins 被重新賦值。契約寫得更直白：皮換了動畫原封不動，這件事由結構保證，不靠紀律。</p>
       <p>正本本身也有鎖。骨架正本是唯一動畫源，日後手修也修它。產線任何階段都不自動覆寫；要重烘，得明白下 <code>--force</code>。沒帶 <code>--force</code> 就跑，程式直接退回非 0，檔案原樣不動。這條有測試守著。</p>
 
-      <h4>第二層：官方 runtime 當考官</h4>
-      <p>考官住在一個獨立的資料夾，自己一份 npm 套件，鎖死 spine-core 4.2.119。遊戲那邊的 <code>package.json</code> 一個字都沒動：出貨路徑上零依賴，一樣是靠結構不靠紀律。官方 runtime 只在判卷的時候出現，永遠不進遊戲。</p>
-      <p>考卷的做法：驅動官方動畫狀態機跑 60 步，每 10 步取一次樣。每一根骨取五個值：世界座標 x、y、旋轉、x 縮放、y 縮放。</p>
+      <h4>第二層：官方 runtime 當驗收程式</h4>
+      <p>驗收程式放在一個獨立的資料夾，自己一份 npm 套件，鎖死官方引擎核心 spine-core 4.2.119。遊戲那邊的 <code>package.json</code> 一個字都沒動：出貨路徑上零依賴，一樣是靠結構不靠紀律。官方 runtime 只在驗收的時候出現，永遠不進遊戲。</p>
+      <p>這套驗收的做法：驅動官方動畫狀態機跑 60 步，每 10 步取一次樣。每一根骨取五個值：世界座標 x、y、旋轉、x 縮放、y 縮放。</p>
 
-      <h4>考卷考四件事</h4>
+      <h4>這套驗收查四件事</h4>
       <ul>
-        <li>載得進去：atlas 一頁 1024×1024、10 個 region；11 根骨、10 個 slot、3 支動畫。setup 姿勢裡每一個附件都在 atlas 找得到，解不出來的 0 個。</li>
-        <li>沒有壞值：NaN 檢查跑遍全 rig 11 根，不是抽幾根看看。測試裡寫死了這條：零 NaN 要對整副骨架成立，不是對樣本成立。</li>
+        <li>載得進去：合圖檔（atlas）一頁 1024×1024、10 個圖塊（region）；11 根骨、10 個 slot、3 支動畫。起始姿勢（setup）裡每一個附件都在 atlas 找得到，解不出來的 0 個。</li>
+        <li>沒有壞值：NaN 檢查跑遍整副骨架（rig）11 根，不是抽幾根看看。測試裡寫死了這條：零 NaN 要對整副骨架成立，不是對樣本成立。</li>
         <li>真的有動：只查 NaN 不夠，全部不動也不會有 NaN。所以另外查「動了幾根」，答案 10 根，沒動的那根是 root。</li>
         <li>動畫沒被換掉：換圖頁前後，每一根骨、每一個取樣點的數值做深度比對，完全一樣。</li>
       </ul>
 
       <h4>換圖頁那一關：不給它，就沒得換</h4>
       <p>驗「換皮沒動到骨架」，最直覺的做法是換完再比對。這裡用更省事的做法。放新圖頁那個資料夾，裡面只有圖跟 atlas，沒有骨架檔。測試兩欄餵的是同一個骨架檔案物件。骨架沒被換掉，由結構保證，不靠比對。這句也寫在那個資料夾自己的說明檔裡。</p>
-      <p>比對還是有，只是位置不同：測試會比判卷前後骨架檔的雜湊，兩次一樣，確認考卷自己沒有偷改受測物。</p>
+      <p>比對還是有，只是位置不同：測試會比驗收前後骨架檔的雜湊，兩次一樣，確認這套驗收自己沒有偷改受測物。</p>
 
       <h4>跨主題那次實測，跟它的邊界</h4>
       <p>兩個主題各跑完一次完整產線，各出一包 75 檔，然後比對兩包的骨架檔。結果：bones 11 根逐位元相同，slots 10 個逐位元相同，animations 三支（idle、win、celebrate）逐位元相同，skins 不同。</p>
       <p>邊界要講清楚，三件事。比的是那三個區塊，不是整個檔案，整檔一定不同，因為 skin 名字就是主題名。這條用人工腳本跑，還沒排進自動測試；自動測試守同一件事的另一面（組包後動畫與正本相等）。實測用的那包素材事後刪了。留下來的是結論跟腳本。</p>
 
-      <h4>考卷抓到過什麼</h4>
-      <p>抓到過一次真的，而且錯在契約自己。曲線規格寫成「每條 bezier 四個值」，但位移跟縮放各是兩個屬性，要八個。自家預覽器打得開，因為它照同一份錯規格寫。官方 runtime 一載入，10 根骨全部 NaN。</p>
+      <h4>這套驗收抓到過什麼</h4>
+      <p>抓到過一次真的，而且錯在契約自己。曲線規格寫成「每條貝茲曲線（bezier）四個值」，但位移跟縮放各是兩個屬性，要八個。自家預覽器打得開，因為它照同一份錯規格寫。官方 runtime 一載入，10 根骨全部 NaN。</p>
       <p>修法不是改產出遷就 runtime，是改契約本文，並在條文旁邊註明：這個缺陷來自先前那行字。舊的錯誤輸出留著當控制組，測試現在還在跑它，確認那盞紅燈還會亮。另外再跑一組對照：曲線全刪改成線性，NaN 就消失，問題確實出在曲線。</p>
 
       <h4>還沒過的，一起講</h4>
-      <p>考卷不在任何自動流程裡，人工跑。舊主題包已經出貨，還帶著那批四個值的曲線。餵官方 runtime 現在仍然是紅的，要用官方 runtime 展示就得重跑一次。骨架檔裡的版本字串寫著 4.2 子集，官方 4.2 解析器不因此拒收，但那是「沒被擋下來」，不是「有人保證相容」。這三條都寫在判決文件的待決欄裡，沒有藏。</p>
+      <p>這套驗收不在任何自動流程裡，人工跑。舊主題包已經出貨，還帶著那批四個值的曲線。餵官方 runtime 現在仍然是紅的，要用官方 runtime 展示就得重跑一次。骨架檔裡的版本字串寫著 4.2 子集，官方 4.2 解析器不因此拒收，但那是「沒被擋下來」，不是「有人保證相容」。這三條都寫在判決文件的待決欄裡，沒有藏。</p>
 
       <h4>輪到你了</h4>
-      <p>這章你是調的人。你在 Spine 編輯器裡調好的節奏跟重心，換一百套皮都還在。產線只改寫 skins，動畫整段原封帶走；人修過的檔案，產線永不覆寫。要重烘骨架正本，得有人明白下 <code>--force</code>，不會有哪個階段順手幫你烘掉。真的動到了，不用你逐格看。考卷會指出哪一根骨、哪一支動畫、第幾個取樣點對不上。</p>
+      <p>這章你是調的人。你在 Spine 編輯器裡調好的節奏跟重心，換一百套皮都還在。產線只改寫 skins，動畫整段原封帶走；人修過的檔案，產線永不覆寫。要重烘骨架正本，得有人明白下 <code>--force</code>，不會有哪個階段順手幫你烘掉。真的動到了，不用你逐格看。驗收會指出哪一根骨、哪一支動畫、第幾個取樣點對不上。</p>
     </div>
 
     <div id="b-receipts" class="blk">
@@ -164,15 +164,15 @@
           <span class="rl">docs/evidence/external-runtime-load.md</span>
         </li>
         <li>
-          <p class="rk">考官程式（載入、逐骨取樣、NaN 與動沒動的判法）</p>
+          <p class="rk">驗收程式（載入、逐骨取樣、NaN 與動沒動的判法）</p>
           <span class="rl">harness/external-runtime/src/judge-core.ts</span>
         </li>
         <li>
-          <p class="rk">考卷本身（20 個測試，含換圖頁與紅燈重現）</p>
+          <p class="rk">這套驗收本身（20 個測試，含換圖頁與紅燈重現）</p>
           <span class="rl">harness/external-runtime/test/external-runtime-load.test.ts</span>
         </li>
         <li>
-          <p class="rk">考官版本鎖在自己的套件裡，遊戲零依賴</p>
+          <p class="rk">驗收程式版本鎖在自己的套件裡，遊戲零依賴</p>
           <span class="rl">harness/external-runtime/package.json</span>
         </li>
         <li>
@@ -204,7 +204,7 @@
   </section>
 
   <nav class="pager" aria-label="前後章">
-    <a class="prev" href="method-02.html"><span class="dir">上一章</span><span class="t">二、契約：一份 manifest 同時是美術訂單與交付版型</span></a>
+    <a class="prev" href="method-02.html"><span class="dir">上一章</span><span class="t">二、契約：同一份清單檔，美術照它畫，遊戲照它收</span></a>
     <a class="next" href="method-04.html"><span class="dir">下一章</span><span class="t">四、人的位置：機器守結構，人守品味</span></a>
   </nav>
   </div>
