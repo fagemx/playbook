@@ -31,9 +31,12 @@
   try { saved = localStorage.getItem(KEY); } catch (e) {}
   applyTheme(saved || "auto");
 
-  /* ── 圖上的流點：沿既有 e-path 跑，動不了就停在畫布外 ── */
+  /* ── 圖上的流點：沿既有 e-path 跑。
+     圓心必須留在 (0,0)：animateMotion 的位移是疊加在圓心座標上的，
+     圓心偏移多少，整條軌跡就平移多少。錯開用負 begin（載入即在線上），
+     瀏覽器不支援 animateMotion 就整段不畫。 ── */
   var SVGNS = "http://www.w3.org/2000/svg";
-  if (!reduceMotion) {
+  if (!reduceMotion && "SVGAnimateMotionElement" in window) {
     document.querySelectorAll("figure.dg svg").forEach(function (svg) {
       var paths = svg.querySelectorAll("path.e-path");
       var n = Math.min(paths.length, 3);
@@ -43,11 +46,9 @@
         var c = document.createElementNS(SVGNS, "circle");
         c.setAttribute("class", "dot");
         c.setAttribute("r", "3");
-        c.setAttribute("cx", "-20");
-        c.setAttribute("cy", "-20");
         var m = document.createElementNS(SVGNS, "animateMotion");
         m.setAttribute("dur", (1.6 + i * 0.5).toFixed(1) + "s");
-        m.setAttribute("begin", (i * 0.4).toFixed(1) + "s");
+        m.setAttribute("begin", String(-i * 0.4) + "s");
         m.setAttribute("repeatCount", "indefinite");
         m.setAttribute("path", d);
         c.appendChild(m);
