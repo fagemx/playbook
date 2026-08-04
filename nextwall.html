@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>下一道牆</title>
+<noscript><meta http-equiv="refresh" content="0;url=nextwall-01.html"></noscript>
+<link rel="stylesheet" href="assets/site.css">
+<script>
+(function () {
+  var m = (location.hash || "").match(/^#ch([1-6])$/);
+  var n = m ? m[1] : "1";
+  location.replace("nextwall-0" + n + ".html" + (m ? "#ch" + n : ""));
+})();
+</script>
+</head>
+<body>
+<main style="max-width:760px;margin:0 auto;padding:56px 24px;">
+  <p>《下一道牆》已分章。<a href="nextwall-01.html">從第一章開始</a>，或回<a href="index.html">總覽</a>。</p>
+</main>
+</body>
+</html>
